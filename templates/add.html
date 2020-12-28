@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <p>The .table class adds basic styling (light padding and horizontal dividers) to a table:</p>
+    <a href="/add" class="btn btn-success" role="button">Add record</a>
+    <a href="/del" class="btn btn-danger" role="button">Delete record</a><br>
+ 									<table class="table table-striped- table-bordered table-hover table-checkable" id="kt_table_1">
+
+<form action="/add">
+
+  <label for="proxy_port_in">Входящий порт:</label><br><input type="text" id="proxy_port_in" name="proxy_port_in" value="32000"><br>
+  <label for="fp_name">Код подсистемы:</label><br><input type="text" id="fp_name" name="fp_name" value="DCARDS_WEB"><br><br>
+  <label for="project">Имя подсистемы:</label><br><input type="text" id="project" name="project" value="Дебетовые карты в Веб"><br><br>
+  <label for="author">Автор:</label><br><input type="text" id="author" name="author" value="Kurilov-EI"><br><br>
+  <label for="proxy_port_out">Исходящий порт:</label><br><input type="text" id="proxy_port_out" name="proxy_port_out" value="34000"><br><br>
+  <label for="stop_date">Дата останова:</label><br><input type="text" id="stop_date" name="stop_date" value="28.12.2020 13:00"><br><br>
+  <label for="start_date">Исходящий порт:</label><br><input type="text" id="start_date" name="start_date" value="28.12.2020 13:10"><br><br>
+  <label for="start_date">Дата Старта:</label><br><input type="text" id="start_date" name="start_date" value="28.12.2020 13:10"><br><br>
+  <label for="status">Статус:</label><br><input type="text" id="status" name="status" value="false"><br><br>
+  <input type="submit" value="Submit">
+  <input type="reset">
+</form>
+
+</table>
+
+</div>
+</body>
+</html>
