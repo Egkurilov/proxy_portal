@@ -26,7 +26,14 @@ def comand(comand):
 
 @app.route('/add')
 def add():
-    det_params(request.args)
-
     return render_template('add.html')
 
+
+@app.route('/input')
+def input():
+    det_params(request.args)
+    return redirect('/', code=302)
+
+
+if __name__ == "__main__":
+    app.run(threaded=True, processes=3, port=5000)
