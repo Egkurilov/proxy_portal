@@ -20,6 +20,7 @@
                                         <thead>
 											<tr>
 												<th>Входящий порт</th>
+												<th>Имя прокси</th>
 												<th>Код подсистемы</th>
 												<th>Имя подсистемы</th>
 												<th>Автор</th>
@@ -35,6 +36,7 @@
                                         {% for proxy in query_result %}
 											<tr>
 												<td>{{ proxy.proxy_port_in }}</td>
+												<td>{{ proxy.proxy_name }}</td>
 												<td>{{ proxy.fp_name }}</td>
 												<td>{{ proxy.project }}</td>
 												<td>{{ proxy.author }}</td>
@@ -43,9 +45,9 @@
 												<td>{{ proxy.start_date }}</td>
 												<td>{{ proxy.status }}</td>
                                                 <td>
-                                                 <a href="/comand/start" class="btn-sm btn-success" role="button">Start</a>
-                                                 <a href="/comand/edit" class="btn-sm btn-warning" role="button">Edit</a>
-                                                 <a href="/comand/stop" class="btn-sm btn-danger" role="button">Stop</a>
+                                                 <a href="/start/{{ proxy.id }}" class="btn-sm btn-success" role="button">Start</a>
+                                                 <a href="/edit" class="btn-sm btn-warning" role="button">Edit</a>
+                                                 <a href="/stop/{{ proxy.id }}" class="btn-sm btn-danger" role="button">Stop</a>
 												</td>
 											</tr>
                                         {% endfor %}
@@ -54,6 +56,7 @@
 										<tfoot>
 											<tr>
 												<th>Входящий порт</th>
+                                                <th>Имя прокси</th>
 												<th>Код подсистемы</th>
 												<th>Имя подсистемы</th>
 												<th>Автор</th>

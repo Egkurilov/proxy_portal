@@ -2,7 +2,7 @@ from flask import Flask, render_template, redirect, request
 from sqlalchemy.orm import sessionmaker
 
 from db import migrate
-from handler import handler_command, det_params
+from handler import handler_command, get_params
 
 app = Flask(__name__)
 
@@ -18,9 +18,9 @@ def main():
     return render_template('index.html', query_result=query_result)
 
 
-@app.route('/comand/<comand>')
-def comand(comand):
-    handler_command(comand)
+@app.route('/<comand>/<id>')
+def comand(comand, id):
+    handler_command(comand, id)
     return redirect('/', code=302)
 
 
@@ -31,7 +31,7 @@ def add():
 
 @app.route('/input')
 def input():
-    det_params(request.args)
+    get_params(request.args)
     return redirect('/', code=302)
 
 
