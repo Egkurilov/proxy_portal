@@ -1,12 +1,10 @@
 from flask import Flask, render_template, redirect, request
 from sqlalchemy.orm import sessionmaker
-
+from db.migrate import ProxyList
 from db import migrate
 from handler import handler_command, get_params
 
 app = Flask(__name__)
-
-from db.migrate import ProxyList
 
 DBSession = sessionmaker(bind=migrate.engine)
 session = DBSession()
@@ -27,6 +25,12 @@ def comand(comand, id):
 @app.route('/add')
 def add():
     return render_template('add.html')
+
+
+@app.route('/delete')
+def delete():
+    query_result = session.query(ProxyList).all()
+    return render_template('delete.html', query_result=query_result)
 
 
 @app.route('/input')

@@ -2,7 +2,7 @@ from sqlalchemy.orm import sessionmaker
 
 from db import migrate
 from db.migrate import ProxyList
-from proxy_control import start_proxy, stop_proxy
+from proxy_control import start_proxy, stop_proxy, delete_proxy
 
 DBSession = sessionmaker(bind=migrate.engine)
 session = DBSession()
@@ -13,6 +13,8 @@ def handler_command(command, id):
         start_proxy(id)
     elif command == 'stop':
         stop_proxy(id)
+    elif command == 'delete':
+        delete_proxy(id)
     elif command == 'edit':
         print(command)
 

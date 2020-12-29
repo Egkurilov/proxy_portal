@@ -17,3 +17,9 @@ def stop_proxy(ids):
     session.query(ProxyList.id).filter(ProxyList.id == ids).update({'status': False})
     session.flush()
     session.commit()
+
+
+def delete_proxy(ids):
+    session.query(ProxyList.id).filter(ProxyList.id == ids).delete()
+    session.flush()
+    session.commit()
