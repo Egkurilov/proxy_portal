@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <p>The .table class adds basic styling (light padding and horizontal dividers) to a table:</p>
+    <a href="/add" class="btn btn-success" role="button">Add record</a>
+    <a href="/del" class="btn btn-danger" role="button">Delete record</a><br>
+        <table class="table table-striped- table-bordered table-hover table-checkable" id="kt_table_1">
+                    {% block content %}
+                    {% for proxy in query_result %}
+                <form action="/input-edit">
+
+                  <label for="proxy_port_in">Входящий порт:</label><br><input type="text" id="proxy_port_in" name="proxy_port_in" value="{{ proxy.proxy_port_in }}"><br>
+                  <label for="proxy_name">Код подсистемы:</label><br><input type="text" id="proxy_name" name="proxy_name" value="{{ proxy.proxy_name }}"><br><br>
+                  <label for="fp_name">Код подсистемы:</label><br><input type="text" id="fp_name" name="fp_name" value="{{ proxy.fp_name }}"><br><br>
+                  <label for="project">Имя подсистемы:</label><br><input type="text" id="project" name="project" value="{{ proxy.project }}"><br><br>
+                  <label for="author">Автор:</label><br><input type="text" id="author" name="author" value="{{ proxy.author }}"><br><br>
+                  <label for="proxy_port_out">Исходящий порт:</label><br><input type="text" id="proxy_port_out" name="proxy_port_out" value="{{ proxy.proxy_port_out }}"><br><br>
+                  <label for="stop_date">Дата останова:</label><br><input type="text" id="stop_date" name="stop_date" value="{{ proxy.stop_date }}"><br><br>
+                  <label for="start_date">Дата старта:</label><br><input type="text" id="start_date" name="start_date" value="{{ proxy.start_date }}"><br><br>
+                  <input type="submit" value="Submit">
+                  <input type="reset">
+
+                </form>
+                                {% endfor %}
+                    {% endblock %}
+        </table>
+
+</div>
+</body>
+</html>

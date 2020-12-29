@@ -2,7 +2,7 @@ from flask import Flask, render_template, redirect, request
 from sqlalchemy.orm import sessionmaker
 from db.migrate import ProxyList
 from db import migrate
-from handler import handler_command, get_params
+from handler import handler_command, get_params, get_edit_params
 
 app = Flask(__name__)
 
@@ -27,6 +27,12 @@ def add():
     return render_template('add.html')
 
 
+@app.route('/edit/<id>')
+def edit(id):
+    query_result = session.query(ProxyList).filter(ProxyList.id == id)
+    return render_template('edit.html', query_result=query_result)
+
+
 @app.route('/delete')
 def delete():
     query_result = session.query(ProxyList).all()
@@ -35,7 +41,14 @@ def delete():
 
 @app.route('/input')
 def input():
+    print(request.args)
     get_params(request.args)
+    return redirect('/', code=302)
+
+
+@app.route('/input-edit')
+def input_edit():
+    get_edit_params(request.args)
     return redirect('/', code=302)
 
 
