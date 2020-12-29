@@ -8,16 +8,12 @@ session = DBSession()
 
 
 def start_proxy(ids):
-    value = session.query(ProxyList.id).filter(id == 0)
-    print(value)
-    value.status = True
-    session.commit()
+    session.query(ProxyList.id).filter(ProxyList.id == ids).update({'status': True})
     session.flush()
+    session.commit()
 
 
 def stop_proxy(ids):
-    value = session.query(ProxyList.id, ProxyList.status).filter(id == 0)
-    print(value)
-    value.status = False
-    session.commit()
+    session.query(ProxyList.id).filter(ProxyList.id == ids).update({'status': False})
     session.flush()
+    session.commit()
