@@ -41,7 +41,6 @@ def delete():
 
 @app.route('/input')
 def input():
-    print(request.args)
     get_params(request.args)
     return redirect('/', code=302)
 

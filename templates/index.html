@@ -8,14 +8,20 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+  <link rel="stylesheet"  href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
+  <script src="static/app.js"></script>
 </head>
 <body>
 
 <div class="container">
-  <p>The .table class adds basic styling (light padding and horizontal dividers) to a table:</p>
+
+<center class="button">
     <a href="/add" class="btn btn-success" role="button">Add record</a>
     <a href="/delete" class="btn btn-danger" role="button">Delete record</a>
- 									<table class="table table-striped- table-bordered table-hover table-checkable" id="kt_table_1">
+</center>
+
+ 									<table class="table table-striped- table-bordered table-hover table-checkable" id="index-table">
 
                                         <thead>
 											<tr>
@@ -45,8 +51,8 @@
 												<td>{{ proxy.start_date }}</td>
 												<td>{{ proxy.status }}</td>
                                                 <td>
-                                                 <a href="/start/{{ proxy.id }}" class="btn-sm btn-success" role="button">Start</a>
-                                                 <a href="/edit/{{ proxy.id }}" class="btn-sm btn-warning" role="button">Edit</a>
+                                                 <a href="/start/{{ proxy.id }}" class="btn-sm btn-success" role="button">Start</a> <br>
+                                                 <a href="/edit/{{ proxy.id }}" class="btn-sm btn-warning" role="button">Edit</a> <br>
                                                  <a href="/stop/{{ proxy.id }}" class="btn-sm btn-danger" role="button">Stop</a>
 												</td>
 											</tr>
@@ -73,9 +79,6 @@
 
 </div>
 <div>
-
-
-
 </div>
 </body>
 </html>
