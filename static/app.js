@@ -5,6 +5,19 @@ $(document).ready(function() {
             { "visible": false, "targets": groupColumn }
         ],
         "order": [[ groupColumn, 'asc' ]],
+        "lengthMenu": [ [50, 75, 100, -1], [50, 75, 100, "All"] ],
+        "columns": [
+            null,
+            null,
+            null,
+            null,
+            {"width": "100px"},
+            null,
+            null,
+            null,
+            null,
+            null,
+        ],
         "displayLength": 25,
         "drawCallback": function ( settings ) {
             var api = this.api();

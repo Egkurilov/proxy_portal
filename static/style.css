@@ -1,0 +1,5 @@
+tr.group,
+tr.group:hover {
+    background-color: #ddd !important;
+    font-weight: 700;
+}

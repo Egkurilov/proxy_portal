@@ -1,4 +1,5 @@
 from flask import Flask, render_template, redirect, request
+from sqlalchemy import func
 from sqlalchemy.orm import sessionmaker
 from db.migrate import ProxyList
 from db import migrate
@@ -24,7 +25,8 @@ def comand(comand, id):
 
 @app.route('/add')
 def add():
-    return render_template('add.html')
+    query_result = session.query(func.max(ProxyList.proxy_port_in) + 1)
+    return render_template('add.html',  query_result=query_result[0])
 
 
 @app.route('/edit/<id>')
@@ -52,4 +54,4 @@ def input_edit():
 
 
 if __name__ == "__main__":
-    app.run(threaded=True, processes=3, port=5000)
+    app.run(threaded=True, processes=50, port=5000)

@@ -21,6 +21,6 @@ class ProxyList(Base):
     status =  Column(Boolean, unique=False, default=False)
 
 
-engine = create_engine('sqlite:///proxy_list.db')
+engine = create_engine('sqlite:///proxy_list.db?check_same_thread=False')
 
 Base.metadata.create_all(engine)
