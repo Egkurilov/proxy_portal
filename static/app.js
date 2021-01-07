@@ -20,7 +20,7 @@ $(document).ready(function() {
         ],
         columnDefs: [{
 		"render": function(data, type, row) {
-			return(data == 'false' ? "DOWN" : "UP");
+			return(data == 'False' ? "DOWN" : "UP");
 		},
 		"targets": 8
 	}],
