@@ -18,6 +18,12 @@ $(document).ready(function() {
             null,
             null,
         ],
+        columnDefs: [{
+		"render": function(data, type, row) {
+			return(data == 'false' ? "DOWN" : "UP");
+		},
+		"targets": 7
+	}],
         "displayLength": 25,
         "drawCallback": function ( settings ) {
             var api = this.api();
