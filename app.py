@@ -1,10 +1,11 @@
 from flask import Flask, render_template, redirect, request
 from sqlalchemy import func
 from sqlalchemy.orm import sessionmaker
+from db import migrate
 from db.migrate import ProxyList
 
 
-from db import migrate
+
 from handler import handler_command, get_params, get_edit_params
 
 app = Flask(__name__)
