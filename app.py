@@ -2,6 +2,8 @@ from flask import Flask, render_template, redirect, request
 from sqlalchemy import func
 from sqlalchemy.orm import sessionmaker
 from db.migrate import ProxyList
+
+
 from db import migrate
 from handler import handler_command, get_params, get_edit_params
 
@@ -54,4 +56,4 @@ def input_edit():
 
 
 if __name__ == "__main__":
-    app.run(threaded=True, processes=50, port=5000, host='0.0.0.0', debug=True)
+    app.run( port=5000, host='0.0.0.0', debug=True)

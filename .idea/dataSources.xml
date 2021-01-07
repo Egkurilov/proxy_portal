@@ -1,31 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="proxy_list.db" uuid="bc5c5d3c-c12a-41bb-9106-67dd9b489b0d">
+    <data-source source="LOCAL" name="proxy_list" uuid="989a6510-6768-4468-88a4-bb43d1604923">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/db/proxy_list.db</jdbc-url>
-      <driver-properties>
-        <property name="enable_load_extension" value="true" />
-      </driver-properties>
+      <jdbc-url>jdbc:sqlite:C:\Work\Git\proxy_portal\proxy_list.db</jdbc-url>
     </data-source>
-    <data-source source="LOCAL" name="proxy_list" uuid="f6b536b7-08b6-4e7c-a301-d6b454dc7a22">
+    <data-source source="LOCAL" name="proxy_list.db" uuid="1d440295-d52d-4811-a4d1-2713ec6919fb">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
       <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/proxy_list.db</jdbc-url>
-      <driver-properties>
-        <property name="enable_load_extension" value="true" />
-      </driver-properties>
-      <libraries>
-        <library>
-          <url>file://$APPLICATION_CONFIG_DIR$/jdbc-drivers/Xerial SQLiteJDBC/3.31.1/sqlite-jdbc-3.31.1.jar</url>
-        </library>
-        <library>
-          <url>file://$APPLICATION_CONFIG_DIR$/jdbc-drivers/Xerial SQLiteJDBC/3.31.1/license.txt</url>
-        </library>
-      </libraries>
     </data-source>
   </component>
 </project>
