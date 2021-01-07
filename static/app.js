@@ -22,7 +22,7 @@ $(document).ready(function() {
 		"render": function(data, type, row) {
 			return(data == 'false' ? "DOWN" : "UP");
 		},
-		"targets": 7
+		"targets": 8
 	}],
         "displayLength": 25,
         "drawCallback": function ( settings ) {
