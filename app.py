@@ -4,8 +4,6 @@ from sqlalchemy.orm import sessionmaker
 from db import migrate
 from db.migrate import ProxyList
 
-
-
 from handler import handler_command, get_params, get_edit_params
 
 app = Flask(__name__)
@@ -29,7 +27,7 @@ def comand(comand, id):
 @app.route('/add')
 def add():
     query_result = session.query(func.max(ProxyList.proxy_port_in) + 1)
-    return render_template('add.html',  query_result=query_result[0])
+    return render_template('add.html', query_result=query_result[0])
 
 
 @app.route('/edit/<id>')
@@ -57,4 +55,4 @@ def input_edit():
 
 
 if __name__ == "__main__":
-    app.run( port=5000, host='0.0.0.0', debug=True)
+    app.run(port=5000, host='0.0.0.0', debug=True)
