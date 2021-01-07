@@ -54,4 +54,4 @@ def input_edit():
 
 
 if __name__ == "__main__":
-    app.run(threaded=True, processes=50, port=5000)
+    app.run(threaded=True, processes=50, port=5000, host='0.0.0.0', debug=True)
