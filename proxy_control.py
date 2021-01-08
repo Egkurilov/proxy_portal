@@ -31,7 +31,7 @@ def stop_proxy(ids):
     print("ID in base: "+ ids)
     for pid in kill_pid:
         print("PID " + str(pid[0]))
-        subprocess.Popen(['kill -9 ' + pid[0]], shell=True)
+        subprocess.Popen(['kill -9 ' + str(pid[0])], shell=True)
     session.query(ProxyList.id).filter(ProxyList.id == ids).update({'status': False})
     session.flush()
     session.commit()
