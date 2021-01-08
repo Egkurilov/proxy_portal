@@ -26,10 +26,10 @@ def start_proxy(ids):
 
 
 def stop_proxy(ids):
-    kill_pid =session.query(ProxyList.id, ProxyList.proxy_pid).filter(ProxyList.id == ids)
+    kill_pid = session.query(ProxyList.id, ProxyList.proxy_pid).filter(ProxyList.id == ids)
     for pid in kill_pid:
-        print(pid)
-        subprocess.run(['kill', '-9', pid[0]], shell=True)
+        print(pid[0])
+        subprocess.Popen(['kill', '-9', pid[0]], shell=True)
     session.query(ProxyList.id).filter(ProxyList.id == ids).update({'status': False})
     session.flush()
     session.commit()
