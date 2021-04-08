@@ -12,7 +12,7 @@ session = DBSession()
 
 
 def execute_shell_script(ids):
-    result_sh = subprocess.Popen(['/home/shaneque/work/proxy_portal/static/proxy_files/proxy.sh', "abc"], \
+    result_sh = subprocess.Popen(['proxy', 'http', ' -t tcp', ' -p "0.0.0.0:38080"'], \
                                  stdout=subprocess.PIPE, shell=True)
     session.query(ProxyList.id).filter(ProxyList.id == ids).update({'proxy_pid': result_sh.pid})
     session.query(ProxyList.id).filter(ProxyList.id == ids).update({'status': True})
@@ -26,7 +26,6 @@ def start_proxy(ids):
 
 
 def stop_proxy(ids):
-    #problem code
     kill_pid = session.query(ProxyList.proxy_pid).filter(ProxyList.id == ids)
     print("ID in base: "+ ids)
     for pid in kill_pid:
